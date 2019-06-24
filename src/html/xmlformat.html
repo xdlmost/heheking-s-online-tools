@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= htmlWebpackPlugin.options.content.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content= "<%= htmlWebpackPlugin.options.content.keywords %>" >
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+	<link rel="stylesheet" data-name="vs/editor/editor.main" href="./thirdpart/vs/editor/editor.main.css">
+</head>
+<body>
+<div class="topbar">
+    <%= htmlWebpackPlugin.options.content.topbar %>
+</div>
+<div class="container-fluid">
+    <div class="sidebar">
+        <%= htmlWebpackPlugin.options.content.sidebar %>
+    </div>
+    <div class="content">
+        <div class="content-inner">
+            <h1>XML 格式化工具 </h1>
+            <p>将代码xml复制到下方编辑栏中，点击功能按钮进行<strong>格式化(Alt+Shift+F)</strong>或<strong>最小化(Alt+Shift+M)</strong>对xml进行操作</p>
+            <p>在编辑栏中单击右键弹出菜单，也可以进行相应操作</p>
+            <p>在编辑栏中可以使用快捷键<strong>Ctrl+F</strong>进行搜索，<strong>F1</strong>可以使用更多指令</p>
+            <div class="form-wrapper">
+                <div class="title"><span class="option">编辑器主题：</span></div>
+                <select id="theme_picker" name="indentation">
+							<option value="vs" selected="selected" >VS Code</option>
+							<option value="vs-dark" >VS Code Dark</option>
+							<option value="hc-black">HC black</option>
+`						</select>
+                <div class="buttons" >
+                    <div class="title"><span class="option">功能:</span></div>
+                    <button class="btn primary" title="Format the XML document" id='xml_format' >格式化</button>
+                    <button class="btn primary" title="Minify the XML document" id='xml_minify'>最小化</button>
+                    <button class="btn primary" title="Add a XML document" id='xml_usecase'>来个用例</button>
+                </div>
+
+                <div id="codecontainer" style="height:450px;border:1px solid grey"></div>
+            </div>
+        </div>
+        <%= htmlWebpackPlugin.options.content.footer %>
+    </div>
+</div>
+
+<script>var require = { paths: { 'vs': './thirdpart/vs' } };</script>
+<script src="./thirdpart/vs/loader.js"></script>
+<script src="./thirdpart/vs/editor/editor.main.nls.js"></script>
+<script src="./thirdpart/vs/editor/editor.main.js"></script>
+
+</body>
+</html>
