@@ -23,6 +23,10 @@ const makeCinfig=(dir)=>{
             catagroy_title:'格式化工具',
             subPages:[]
         },
+        formatter_monaco:{
+            catagroy_title:'格式化工具-monaco',
+            subPages:[]
+        },
     };
     let single_pages=[];
     const listdir=listDirinDir(dir);

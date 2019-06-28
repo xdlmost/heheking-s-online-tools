@@ -5,12 +5,18 @@
     <p>在编辑栏中可以使用快捷键<i class="hotkey">Ctrl+F</i>进行搜索，<i class="hotkey">F1</i>可以使用更多指令</p>
     <p>本页面使用了在线代码编辑器<b>Microsoft</b>的开源项目<a href="https://github.com/microsoft/monaco-editor" target="blank"> monaco-editor </a></p>
     <div class="form-wrapper">
+        <div class="title"><span class="option">编辑器主题：</span></div>
+        <select id="theme_picker" name="indentation">
+			<option value="vs" selected="selected" >VS Code</option>
+			<option value="vs-dark" >VS Code Dark</option>
+			<option value="hc-black">HC black</option>
+		</select>
         <div class="buttons" >
             <div class="title"><span class="option">功能:</span></div>
             <button class="btn primary" title="Format the XML document" id='xml_format' >格式化</button>
             <button class="btn primary" title="Minify the XML document" id='xml_minify'>最小化</button>
             <button class="btn primary" title="Add a XML document" id='xml_usecase'>来个用例</button>
         </div>
-        <textarea id="codecontainer" style="height:450px;width: 100%;border:1px solid grey"></textarea>
+        <div id="codecontainer" style="height:450px;border:1px solid grey"></div>
     </div>
 </div>

@@ -1,8 +1,8 @@
 exports.config={
-    archText:'XML格式化工具',
-    script:['./src/js/xmlformat.js'],
+    archText:'XML格式化工具-monaco',
+    script:['./src/js/xmlformat_monaco.js'],
     template:'basicTemplate.html',
-    catagroy:'formatter',
+    catagroy:'formatter_monaco',
     index:1,
     content:{
         title:'XML格式化工具 | 呵呵大王的工具箱',

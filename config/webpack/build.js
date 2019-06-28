@@ -1,21 +1,22 @@
 const path = require('path');
 var fs = require("fs");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+//const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const config= require(path.resolve('./config/local/config.js')).config;
 
 module.exports = {
   mode:'production',
-  entry: config.entry,
+  entry: {
+    "editor.worker": 'monaco-editor/esm/vs/editor/editor.worker.js',
+    ...config.entry
+  },
   plugins: [
     new CleanWebpackPlugin(),
+    new UglifyJSPlugin(),
     new CopyWebpackPlugin([ // 复制插件
-        { 
-            from: path.resolve('./node_modules/monaco-editor/min'), 
-            to:  path.resolve('./dist/thirdpart')
-        },
         { 
           from: path.resolve('./static/'), 
           to:  path.resolve('./dist/static')
@@ -25,7 +26,6 @@ module.exports = {
           to:  path.resolve('./dist/build/css')
         },
     ]),
-
     ...config.plugins
     
   ],
@@ -34,6 +34,10 @@ module.exports = {
         {
           test: /\.ts$/,
           use: "ts-loader"
+        },
+        {
+          test: /\.css$/,
+          use: [ 'style-loader', 'css-loader' ]
         }
     ]
   },
