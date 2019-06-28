@@ -1,5 +1,4 @@
 var pd = require('./common/pd.js').pd;
-require('../css/globle.css');
 
 const testcase='<?xml version="1.0" encoding="UTF-8"?><XhwNewsML><Version>0.0.1</Version><ApiType>article</ApiType><PushTime>2018-12-25 15:05:00</PushTime><ACTION>1</ACTION><Relevant/><NodeList>    <NodeInfo ID="11109319">      <GAttr>63</GAttr>      <GDisplayOrder>-66480150.1020580000000000000</GDisplayOrder>    <NodeId>11109319</NodeId></NodeInfo>    <NodeInfo ID="11187043">            <GAttr>63</GAttr>      <GDisplayOrder>-66480150.1020580000000000000</GDisplayOrder>    <NodeId>11187043</NodeId></NodeInfo>  </NodeList></XhwNewsML>'
 
@@ -79,5 +78,5 @@ xml_usecase.addEventListener('click',()=>{
         text: testcase, 
     }]);
 })
-
+console.log(window.location.pathname)
 

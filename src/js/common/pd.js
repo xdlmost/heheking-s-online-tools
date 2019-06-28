@@ -64,7 +64,8 @@ function pp() {
 
 pp.prototype.xml = function(text) {
 
-	var ar = text.replace(/>\s{0,}</g,"><")
+    var text2=text.replace(/[\t\r\n]+/g,' ')
+	var ar = text2.replace(/>\s{0,}</g,"><")
 				 .replace(/</g,"~::~<")
 				 .replace(/xmlns\:/g,"~::~xmlns:")
 				 .replace(/xmlns\=/g,"~::~xmlns=")
@@ -288,7 +289,8 @@ pp.prototype.sql = function(text) {
 pp.prototype.xmlmin = function(text, preserveComments) {
 
 	var str = preserveComments ? text
-				   : text.replace(/\<![ \r\n\t]*(--([^\-]|[\r\n]|-[^\-])*--[ \r\n\t]*)\>/g,"");
+                   : text.replace(/\<![ \r\n\t]*(--([^\-]|[\r\n]|-[^\-])*--[ \r\n\t]*)\>/g,"");
+    str=str.replace(/[\t\r\n]+/g,' ')
 	return  str.replace(/>\s{0,}</g,"><");
 };
 

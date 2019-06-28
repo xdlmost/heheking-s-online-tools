@@ -7,12 +7,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const config= require(path.resolve('./config/local/config.js')).config;
 
 module.exports = {
-  mode:'development',
+  mode:'production',
   entry: config.entry,
-  devtool: 'source-map',
-  devServer: {
-     contentBase: './dist'
-    },
   plugins: [
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([ // 复制插件
@@ -31,6 +27,7 @@ module.exports = {
     ]),
 
     ...config.plugins
+    
   ],
   module: {
     rules: [  
@@ -45,6 +42,7 @@ module.exports = {
         '.ts'
     ]
   },
+
   output: {
     filename: 'build/[name].js',
     path: path.resolve('./dist')

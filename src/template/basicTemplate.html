@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= htmlWebpackPlugin.options.content.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keywords" content= "<%= htmlWebpackPlugin.options.content.keywords %>" >
+    <meta name="description" content="<%= htmlWebpackPlugin.options.content.description %>">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <link rel="stylesheet" href="./build/css/globle.css">
+    <link rel="shortcut icon" href="./static/ico/favicon.ico">
+    <%= htmlWebpackPlugin.options.content.inhead %>
+</head>
+<body>
+<div class="topbar">
+    <%= htmlWebpackPlugin.options.content.topbar %>
+</div>
+<div class="container-fluid makemargin">
+    <div class="sidebar">
+        <%= htmlWebpackPlugin.options.content.sidebar %>
+    </div>
+    <div class="content">
+        <%= htmlWebpackPlugin.options.content.content %>
+        <%= htmlWebpackPlugin.options.content.footer %>
+    </div>
+</div>
+<%= htmlWebpackPlugin.options.content.afterfooter %>
+
+</body>
+</html>
